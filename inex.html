@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HousingCorner — Your corner of property | Real Estate Channel Partner, Maharashtra</title>
+<meta name="description" content="Maharashtra's tech-forward real estate channel partner. Find RERA-registered residential and commercial properties with honest advisory, documented every step. Based in Latur, serving all of Maharashtra.">
+<meta name="theme-color" content="#2F5D3A">
+
+<!-- Open Graph -->
+<meta property="og:title" content="HousingCorner — Your corner of property">
+<meta property="og:description" content="Verified residential and commercial properties from RERA-registered builders across Maharashtra.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.housingcorner.in">
+
+<!-- Favicon (inline SVG data URI) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='10' fill='%23F5F0E6'/><path d='M 10 54 L 10 30 L 32 14 L 54 30 L 54 54 Z' fill='%232F5D3A'/><circle cx='32' cy='10' r='3.2' fill='%238BA888'/><path d='M 54 30 L 54 24 L 48 30 Z' fill='%23C77E52'/></svg>">
+
+<!-- Google Fonts: Fraunces + Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ===== Brand tokens ===== */
+:root {
+  --forest: #2F5D3A;
+  --forest-soft: #5C7A4F;
+  --terracotta: #C77E52;
+  --sage: #8BA888;
+  --cream: #F5F0E6;
+  --cream-deep: #EDE6D6;
+  --ink: #1F2A24;
+  --stone: #8A7E6E;
+  --shadow: 0 4px 24px rgba(31, 42, 36, 0.08);
+  --radius: 14px;
+  --radius-sm: 8px;
+  --container: 1200px;
+}
+
+/* ===== Reset ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; border: 0; cursor: pointer; }
+
+/* ===== Typography ===== */
+h1, h2, h3, h4 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+h1 { font-size: clamp(2.25rem, 5.5vw, 4rem); }
+h2 { font-size: clamp(1.75rem, 3.5vw, 2.75rem); margin-bottom: 0.5em; }
+h3 { font-size: 1.35rem; margin-bottom: 0.25em; }
+p  { color: var(--ink); }
+.eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--forest-soft);
+  padding: 6px 12px;
+  border: 1px solid var(--sage);
+  border-radius: 999px;
+  background: rgba(139, 168, 136, 0.1);
+}
+
+/* ===== Layout ===== */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+section { padding: clamp(56px, 8vw, 112px) 0; }
+.section-head { max-width: 720px; margin-bottom: 48px; }
+.section-head p { color: var(--stone); font-size: 1.05rem; }
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+.btn--primary {
+  background: var(--forest);
+  color: var(--cream);
+}
+.btn--primary:hover { background: #1F4429; transform: translateY(-1px); box-shadow: var(--shadow); }
+.btn--accent {
+  background: var(--terracotta);
+  color: var(--cream);
+}
+.btn--accent:hover { background: #B26A40; transform: translateY(-1px); box-shadow: var(--shadow); }
+.btn--ghost {
+  background: transparent;
+  color: var(--forest);
+  border: 1.5px solid var(--forest);
+}
+.btn--ghost:hover { background: var(--forest); color: var(--cream); }
+.btn--whatsapp {
+  background: #25D366;
+  color: #fff;
+}
+.btn--whatsapp:hover { background: #1DAE55; transform: translateY(-1px); box-shadow: var(--shadow); }
+
+/* ===== Navigation ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(245, 240, 230, 0.92);
+  backdrop-filter: saturate(160%) blur(10px);
+  -webkit-backdrop-filter: saturate(160%) blur(10px);
+  border-bottom: 1px solid rgba(139, 168, 136, 0.25);
+}
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  max-width: var(--container);
+  margin-inline: auto;
+}
+.nav__brand { display: flex; align-items: center; gap: 10px; }
+.nav__brand svg { height: 38px; width: auto; }
+.nav__brand-text {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.nav__links {
+  display: flex;
+  gap: 28px;
+}
+.nav__links a {
+  font-size: 0.95rem;
+  color: var(--ink);
+  font-weight: 500;
+  padding: 8px 0;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color 0.15s ease;
+}
+.nav__links a:hover { border-bottom-color: var(--terracotta); }
+.nav__cta { display: flex; align-items: center; }
+.nav__toggle { display: none; background: transparent; color: var(--forest); font-size: 1.5rem; padding: 8px; }
+
+@media (max-width: 900px) {
+  .nav__links { display: none; }
+  .nav__toggle { display: block; }
+  .nav.is-open .nav__links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(139, 168, 136, 0.25);
+  }
+  .nav.is-open .nav__links a { padding: 14px 0; border-bottom: 1px solid rgba(139, 168, 136, 0.2); }
+  .nav__cta .btn { padding: 10px 16px; font-size: 0.85rem; }
+}
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  padding-top: clamp(56px, 8vw, 96px);
+  padding-bottom: clamp(56px, 8vw, 96px);
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 220px; height: 220px;
+  background: var(--terracotta);
+  border-radius: 50%;
+  opacity: 0.12;
+  pointer-events: none;
+}
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.hero__content h1 {
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+.hero__content h1 span.accent { color: var(--forest); font-style: italic; }
+.hero__lede {
+  font-size: 1.15rem;
+  color: var(--ink);
+  opacity: 0.85;
+  max-width: 560px;
+  margin-bottom: 32px;
+}
+.hero__ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 40px; }
+.hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 28px;
+  font-size: 0.85rem;
+  color: var(--stone);
+  font-weight: 500;
+}
+.hero__trust span { display: inline-flex; align-items: center; gap: 6px; }
+.hero__trust .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--terracotta); }
+
+.hero__visual {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  max-width: 440px;
+  margin-left: auto;
+}
+.hero__visual svg { width: 100%; height: auto; filter: drop-shadow(0 12px 24px rgba(31, 42, 36, 0.12)); }
+.hero__visual::after {
+  content: "";
+  position: absolute;
+  bottom: -20px; left: -20px;
+  width: 140px; height: 140px;
+  background: var(--sage);
+  border-radius: 50%;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+@media (max-width: 860px) {
+  .hero__grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero__visual { order: -1; max-width: 280px; margin: 0 auto; }
+}
+
+/* ===== Trust bar ===== */
+.trust-bar {
+  background: var(--forest);
+  color: var(--cream);
+  padding: 32px 0;
+}
+.trust-bar__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  align-items: center;
+}
+.trust-stat strong {
+  display: block;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--cream);
+}
+.trust-stat span {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--sage);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+@media (max-width: 720px) {
+  .trust-bar__grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
+
+/* ===== Services ===== */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.service-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 28px;
+  border: 1px solid rgba(139, 168, 136, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.service-card__icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  background: rgba(199, 126, 82, 0.15);
+  color: var(--terracotta);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+.service-card h3 { color: var(--forest); }
+.service-card p { color: var(--stone); font-size: 0.95rem; margin-top: 8px; }
+
+/* ===== Why us ===== */
+.why {
+  background: linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+}
+.why__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+.why-item { display: flex; gap: 16px; align-items: flex-start; }
+.why-item__num {
+  flex: 0 0 auto;
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--forest);
+  color: var(--cream);
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  display: flex; align-items: center; justify-content: center;
+}
+.why-item h3 { color: var(--forest); margin-bottom: 6px; font-size: 1.15rem; }
+.why-item p { color: var(--stone); font-size: 0.95rem; }
+
+/* ===== Properties ===== */
+.properties__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  margin-top: 48px;
+}
+.property-card {
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(139, 168, 136, 0.3);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.property-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.property-card__image {
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(135deg, var(--forest) 0%, var(--forest-soft) 100%);
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--cream);
+}
+.property-card__image::after {
+  content: "";
+  position: absolute;
+  top: 12px; right: 12px;
+  width: 48px; height: 48px;
+  background: var(--terracotta);
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+  opacity: 0.9;
+}
+.property-card__tag {
+  position: absolute;
+  top: 12px; left: 12px;
+  padding: 4px 10px;
+  background: rgba(245, 240, 230, 0.95);
+  color: var(--forest);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+.property-card__body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+.property-card h3 { color: var(--ink); }
+.property-card__loc { color: var(--forest-soft); font-size: 0.9rem; margin-top: 4px; }
+.property-card__meta {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  margin-top: 14px; padding-top: 14px;
+  border-top: 1px solid rgba(139, 168, 136, 0.25);
+  font-size: 0.85rem; color: var(--stone);
+}
+.property-card__price {
+  margin-top: 14px;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.15rem;
+  color: var(--terracotta);
+}
+.property-card__rera {
+  margin-top: 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--stone);
+}
+
+/* ===== Process ===== */
+.process__timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+  position: relative;
+}
+.process-step {
+  position: relative;
+  padding: 28px 24px;
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid rgba(139, 168, 136, 0.3);
+}
+.process-step__num {
+  position: absolute;
+  top: -16px; left: 24px;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  color: var(--cream);
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.process-step h3 { color: var(--forest); margin-top: 12px; font-size: 1.1rem; }
+.process-step p { color: var(--stone); font-size: 0.92rem; margin-top: 6px; }
+
+/* ===== About ===== */
+.about {
+  background: var(--forest);
+  color: var(--cream);
+}
+.about h2 { color: var(--cream); }
+.about__grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
+.about p { color: rgba(245, 240, 230, 0.88); margin-bottom: 14px; font-size: 1rem; }
+.about__quote {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--cream);
+  border-left: 3px solid var(--terracotta);
+  padding-left: 20px;
+  margin: 24px 0;
+}
+.about__stats { display: flex; flex-direction: column; gap: 20px; }
+.about__stat {
+  background: rgba(245, 240, 230, 0.08);
+  border: 1px solid rgba(139, 168, 136, 0.35);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+}
+.about__stat strong {
+  display: block;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.3rem;
+  color: var(--cream);
+}
+.about__stat span { color: var(--sage); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-top: 4px; }
+
+@media (max-width: 760px) { .about__grid { grid-template-columns: 1fr; gap: 32px; } }
+
+/* ===== FAQ ===== */
+.faq__list { max-width: 780px; margin: 48px auto 0; }
+.faq details {
+  border-bottom: 1px solid rgba(139, 168, 136, 0.3);
+  padding: 20px 0;
+}
+.faq summary {
+  cursor: pointer;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+";
+  font-family: 'Inter', sans-serif;
+  color: var(--terracotta);
+  font-size: 1.4rem;
+  transition: transform 0.2s ease;
+}
+.faq details[open] summary::after { content: "−"; }
+.faq details p { color: var(--stone); margin-top: 12px; font-size: 0.98rem; line-height: 1.7; }
+
+/* ===== Contact / CTA ===== */
+.contact {
+  background: var(--cream-deep);
+}
+.contact__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+.contact__left h2 { color: var(--forest); }
+.contact__channels { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
+.contact__channel {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 20px;
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid rgba(139, 168, 136, 0.3);
+  transition: transform 0.15s ease;
+}
+.contact__channel:hover { transform: translateX(4px); }
+.contact__channel-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: rgba(47, 93, 58, 0.1);
+  color: var(--forest);
+  display: flex; align-items: center; justify-content: center;
+  flex: 0 0 auto;
+}
+.contact__channel strong { display: block; color: var(--ink); font-weight: 600; }
+.contact__channel span { color: var(--stone); font-size: 0.9rem; }
+
+.form {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 32px;
+  border: 1px solid rgba(139, 168, 136, 0.3);
+}
+.form h3 { color: var(--forest); margin-bottom: 8px; }
+.form p { color: var(--stone); font-size: 0.9rem; margin-bottom: 20px; }
+.form label { display: block; font-size: 0.8rem; font-weight: 500; color: var(--ink); margin-bottom: 6px; letter-spacing: 0.02em; }
+.form input, .form select, .form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(139, 168, 136, 0.5);
+  background: var(--cream);
+  color: var(--ink);
+  margin-bottom: 16px;
+  transition: border-color 0.15s ease;
+}
+.form input:focus, .form select:focus, .form textarea:focus {
+  outline: none;
+  border-color: var(--forest);
+}
+.form button { width: 100%; justify-content: center; }
+.form__note { font-size: 0.78rem; color: var(--stone); margin-top: 14px; text-align: center; }
+
+@media (max-width: 860px) { .contact__grid { grid-template-columns: 1fr; gap: 40px; } }
+
+/* ===== Footer ===== */
+footer {
+  background: var(--ink);
+  color: rgba(245, 240, 230, 0.75);
+  padding: 56px 0 24px;
+}
+footer a { color: rgba(245, 240, 230, 0.75); transition: color 0.15s; }
+footer a:hover { color: var(--terracotta); }
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(245, 240, 230, 0.1);
+}
+.footer__brand svg { height: 42px; width: auto; margin-bottom: 16px; }
+.footer__brand p { color: rgba(245, 240, 230, 0.7); font-size: 0.9rem; max-width: 320px; }
+.footer__col h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 14px;
+}
+.footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer__col li { font-size: 0.92rem; }
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: rgba(245, 240, 230, 0.55);
+}
+.footer__compliance {
+  background: rgba(199, 126, 82, 0.08);
+  border-left: 3px solid var(--terracotta);
+  padding: 14px 18px;
+  margin-top: 32px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.82rem;
+  color: rgba(245, 240, 230, 0.7);
+  line-height: 1.6;
+}
+
+@media (max-width: 720px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .footer__brand { grid-column: 1 / -1; }
+}
+
+/* ===== Floating WhatsApp ===== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px; right: 20px;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+  z-index: 40;
+  transition: transform 0.2s ease;
+}
+.whatsapp-float:hover { transform: scale(1.08); }
+
+/* ===== Misc ===== */
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+</style>
+</head>
+<body>
+
+<!-- =========================================================== -->
+<!-- NAV -->
+<!-- =========================================================== -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__brand" aria-label="HousingCorner home">
+      <!-- Inline icon -->
+      <svg viewBox="0 0 260 260" aria-hidden="true">
+        <path d="M 58 220 L 58 128 Q 58 120 64 114 L 124 56 Q 130 50 136 56 L 196 114 Q 202 120 202 128 L 202 220 Q 202 226 196 226 L 64 226 Q 58 226 58 220 Z" fill="#2F5D3A"/>
+        <circle cx="130" cy="158" r="13" fill="#F5F0E6"/>
+        <path d="M 118 168 Q 118 164 122 164 L 138 164 Q 142 164 142 168 L 142 220 L 118 220 Z" fill="#F5F0E6"/>
+        <path d="M 130 64 Q 130 38 152 32 Q 150 52 138 60 Q 134 62 130 64 Z" fill="#8BA888"/>
+        <path d="M 130 70 L 130 64" stroke="#8BA888" stroke-width="3" stroke-linecap="round"/>
+        <path d="M 196 114 L 202 128 L 188 128 Z" fill="#C77E52"/>
+      </svg>
+      <span class="nav__brand-text">HousingCorner</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#why">Why us</a>
+      <a href="#properties">Listings</a>
+      <a href="#process">How it works</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav__cta">
+      <a href="#contact" class="btn btn--primary">Talk to us</a>
+      <button class="nav__toggle" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('is-open')">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- =========================================================== -->
+<!-- HERO -->
+<!-- =========================================================== -->
+<section id="top" class="hero">
+  <div class="container hero__grid">
+    <div class="hero__content">
+      <span class="eyebrow">MahaRERA application in process · Maharashtra</span>
+      <h1>Find your <span class="accent">corner</span><br>of property.</h1>
+      <p class="hero__lede">HousingCorner is Maharashtra's tech-forward real estate channel partner. We connect buyers and investors with verified residential and commercial properties from RERA-registered builders — combining honest on-ground advisory with documented digital workflows.</p>
+      <div class="hero__ctas">
+        <a href="#contact" class="btn btn--primary">Talk to an advisor</a>
+        <a href="#properties" class="btn btn--ghost">Browse properties</a>
+      </div>
+      <div class="hero__trust">
+        <span><span class="dot"></span>100% RERA-registered inventory</span>
+        <span><span class="dot"></span>Documented every step</span>
+        <span><span class="dot"></span>Based in Latur · serving all Maharashtra</span>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <!-- Large brand icon -->
+      <svg viewBox="0 0 260 260" aria-hidden="true">
+        <path d="M 58 220 L 58 128 Q 58 120 64 114 L 124 56 Q 130 50 136 56 L 196 114 Q 202 120 202 128 L 202 220 Q 202 226 196 226 L 64 226 Q 58 226 58 220 Z" fill="#2F5D3A"/>
+        <circle cx="130" cy="158" r="13" fill="#F5F0E6"/>
+        <path d="M 118 168 Q 118 164 122 164 L 138 164 Q 142 164 142 168 L 142 220 L 118 220 Z" fill="#F5F0E6"/>
+        <path d="M 72 128 L 130 70 L 188 128" fill="none" stroke="#F5F0E6" stroke-width="2" stroke-opacity="0.35" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 130 64 Q 130 38 152 32 Q 150 52 138 60 Q 134 62 130 64 Z" fill="#8BA888"/>
+        <path d="M 130 64 Q 138 52 150 34" fill="none" stroke="#2F5D3A" stroke-width="1.6" stroke-linecap="round" stroke-opacity="0.85"/>
+        <path d="M 130 70 L 130 64" stroke="#8BA888" stroke-width="3" stroke-linecap="round"/>
+        <path d="M 196 114 L 202 128 L 188 128 Z" fill="#C77E52"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================== -->
+<!-- TRUST BAR -->
+<!-- =========================================================== -->
+<section class="trust-bar" aria-label="Credibility at a glance">
+  <div class="container trust-bar__grid">
+    <div class="trust-stat"><strong>MahaRERA</strong><span>Application in process</span></div>
+    <div class="trust-stat"><strong>36 Districts</strong><span>All of Maharashtra</span></div>
+    <div class="trust-stat"><strong>Residential + Commercial</strong><span>End-to-end advisory</span></div>
+    <div class="trust-stat"><strong>100%</strong><span>RERA-registered inventory</span></div>
+  </div>
+</section>
+
+<!-- =========================================================== -->
+<!-- SERVICES -->
+<!-- =========================================================== -->
+<section id="services" class="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What we do</span>
+      <h2 style="margin-top: 16px;">Five services. One standard.</h2>
+      <p>Every introduction, negotiation, and handover documented, compliant, and in the buyer's best interest.</p>
+    </div>
+
+    <div class="services__grid">
+      <article class="service-card">
+        <div class="service-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Residential brokerage</h3>
+        <p>Buyer advisory and property matching for apartments, villas and plotted developments in MahaRERA-registered projects.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v8h4"/><path d="M18 9h2a2 2 0 0 1 2 2v11h-4"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+        </div>
+        <h3>Commercial brokerage</h3>
+        <p>Office spaces, retail units, showrooms, warehouses and mixed-use commercial inventory — sourced from RERA-registered projects.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Channel partnership</h3>
+        <p>Curated, compliance-checked introductions between RERA-registered developers and qualified buyers, with follow-up till registration.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 1.9.4 3.7 1.4 5.3.9 1.5 2.1 2.8 3.3 4C10 20.8 12 22 12 22s2-1.2 3.3-2.7c1.2-1.2 2.4-2.5 3.3-4C19.6 13.7 20 11.9 20 10a8 8 0 0 0-8-8z"/></svg>
+        </div>
+        <h3>Site visits &amp; disclosure</h3>
+        <p>Verified walkthroughs, payment-plan explainers and possession-timeline disclosures sourced directly from the MahaRERA portal.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/><line x1="9" y1="11" x2="15" y2="11"/></svg>
+        </div>
+        <h3>Loan &amp; documentation</h3>
+        <p>Coordinated home-loan referrals to scheduled banks and NBFCs. We facilitate — we don't lend, underwrite, or collect EMIs.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================== -->
+<!-- WHY US -->
+<!-- =========================================================== -->
+<section id="why" class="why">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why HousingCorner</span>
+      <h2 style="margin-top: 16px;">Old-school accountability.<br>Modern transparency.</h2>
+      <p>Four promises that differentiate us from the typical broker — and from the typical portal.</p>
+    </div>
+
+    <div class="why__grid">
+      <div class="why-item">
+        <div class="why-item__num">1</div>
+        <div>
+          <h3>RERA-registered only</h3>
+          <p>We do not solicit, advertise, or facilitate any unregistered project. Period. Every listing is verified against the MahaRERA portal.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-item__num">2</div>
+        <div>
+          <h3>Documented, not verbal</h3>
+          <p>Every introduction, site visit, payment plan, and possession timeline is logged in writing and shared with you.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-item__num">3</div>
+        <div>
+          <h3>Buyer-first advisory</h3>
+          <p>Builders pay us, but we work for you. You will hear the honest version — including when a project isn't the right fit.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-item__num">4</div>
+        <div>
+          <h3>Tech-forward workflows</h3>
+          <p>Structured listings, WhatsApp-based discovery, CRM-led follow-up. No chasing, no repeating yourself.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================== -->
+<!-- PROPERTIES -->
+<!-- =========================================================== -->
+<section id="properties" class="properties">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Featured listings</span>
+      <h2 style="margin-top: 16px;">Verified. RERA-registered. Ready to tour.</h2>
+      <p>A curated sample from current inventory. Full catalogue available on request — updated directly from MahaRERA.</p>
+    </div>
+
+    <div class="properties__grid">
+      <!-- Placeholder cards — swap in real listings -->
+      <article class="property-card">
+        <div class="property-card__image">
+          <span class="property-card__tag">Residential</span>
+          <!-- building illustration -->
+          <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="property-card__body">
+          <h3>[Project Name]</h3>
+          <div class="property-card__loc">[Latur · Taluka, Maharashtra]</div>
+          <div class="property-card__meta">
+            <span>2 BHK</span>
+            <span>850 sq.ft.</span>
+            <span>Possession 2027</span>
+          </div>
+          <div class="property-card__price">Starting ₹[XX] L</div>
+          <div class="property-card__rera">MAHARERA P[XXXXX]XXXXX</div>
+        </div>
+      </article>
+
+      <article class="property-card">
+        <div class="property-card__image">
+          <span class="property-card__tag">Commercial</span>
+          <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v8h4"/><path d="M18 9h2a2 2 0 0 1 2 2v11h-4"/></svg>
+        </div>
+        <div class="property-card__body">
+          <h3>[Commercial Project]</h3>
+          <div class="property-card__loc">[Pune · Hinjewadi]</div>
+          <div class="property-card__meta">
+            <span>Office space</span>
+            <span>1,200 sq.ft.</span>
+            <span>Ready to move</span>
+          </div>
+          <div class="property-card__price">Starting ₹[XX] L</div>
+          <div class="property-card__rera">MAHARERA P[XXXXX]XXXXX</div>
+        </div>
+      </article>
+
+      <article class="property-card">
+        <div class="property-card__image">
+          <span class="property-card__tag">Residential</span>
+          <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        </div>
+        <div class="property-card__body">
+          <h3>[Villa Project]</h3>
+          <div class="property-card__loc">[Nashik · Highway belt]</div>
+          <div class="property-card__meta">
+            <span>3 BHK villa</span>
+            <span>2,100 sq.ft.</span>
+            <span>Possession 2026</span>
+          </div>
+          <div class="property-card__price">Starting ₹[XX] L</div>
+          <div class="property-card__rera">MAHARERA P[XXXXX]XXXXX</div>
+        </div>
+      </article>
+    </div>
+
+    <div style="text-align: center; margin-top: 48px;">
+      <a href="#contact" class="btn btn--accent">Request full inventory</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================== -->
+<!-- PROCESS -->
+<!-- =========================================================== -->
+<section id="process" class="process">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2 style="margin-top: 16px;">From your first WhatsApp to your registration.</h2>
+      <p>Four steps. Transparent timelines. Nothing hidden.</p>
+    </div>
+
+    <div class="process__timeline">
+      <div class="process-step">
+        <div class="process-step__num">1</div>
+        <h3>Tell us what you want</h3>
+        <p>Budget, location, timeline, residential or commercial. A 10-minute call or WhatsApp exchange is enough.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num">2</div>
+        <h3>We shortlist RERA-registered options</h3>
+        <p>You receive a written shortlist with payment plans, possession dates, and MahaRERA registration numbers — sourced from the portal.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num">3</div>
+        <h3>Site visits &amp; honest disclosure</h3>
+        <p>We accompany you to sites. You see the good and the honest concerns. No pressure. No scripted selling.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__num">4</div>
+        <h3>Loan, paperwork, registration</h3>
+        <p>We coordinate home-loan referrals, paperwork checks, and walk with you till the registrar's office.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================== -->
+<!-- ABOUT -->
+<!-- =========================================================== -->
+<section id="about" class="about">
+  <div class="container about__grid">
+    <div>
+      <span class="eyebrow" style="border-color: var(--sage); color: var(--sage); background: rgba(139,168,136,0.15);">About us</span>
+      <h2 style="margin-top: 16px;">Built in Latur.<br>For every corner of Maharashtra.</h2>
+      <p>HousingCorner is a Maharashtra-based real estate channel partner founded with a single conviction: every buyer deserves a transparent, paperwork-clean path to their corner of property.</p>
+      <p>Founded by Ram Kole and Rahul Awale, operating as a founder-led firm out of Latur, we connect homebuyers, investors, and commercial occupiers with verified residential and commercial inventory — exclusively from RERA-registered builders across Maharashtra.</p>
+      <div class="about__quote">
+        "To become Maharashtra's most trusted technology-enabled channel partner — the default first call for any buyer seeking a verified, RERA-registered property."
+      </div>
+      <p>Every transaction is conducted in strict compliance with the Real Estate (Regulation and Development) Act, 2016 and MahaRERA directions. No unregistered projects. No unverified claims. No surprises at possession.</p>
+    </div>
+
+    <div class="about__stats">
+      <div class="about__stat">
+        <strong>Founder-led</strong>
+        <span>Personal accountability, not a call-center</span>
+      </div>
+      <div class="about__stat">
+        <strong>MahaRERA compliant</strong>
+        <span>Competency-exam-certified agent</span>
+      </div>
+      <div class="about__stat">
+        <strong>Latur · Maharashtra</strong>
+        <span>On-ground presence, digital reach</span>
+      </div>
+      <div class="about__stat">
+        <strong>RERA-builders only</strong>
+        <span>Zero unregistered inventory — by policy</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================== -->
+<!-- FAQ -->
+<!-- =========================================================== -->
+<section id="faq" class="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Answers</span>
+      <h2 style="margin-top: 16px;">Questions buyers and builders actually ask.</h2>
+    </div>
+
+    <div class="faq__list">
+      <details open>
+        <summary>Do I pay you a fee?</summary>
+        <p>No. As a channel partner, HousingCorner is compensated by the developer once a transaction is registered. You receive the same price you would pay if you walked into the builder's office directly — with the added benefit of buyer-first advisory, documented disclosures, and paperwork support at no extra cost.</p>
+      </details>
+
+      <details>
+        <summary>What does "RERA-registered" mean, and why does it matter?</summary>
+        <p>The Real Estate (Regulation and Development) Act, 2016 requires every real estate project above a threshold size to register with the state authority — MahaRERA in Maharashtra — before it can be marketed or sold. A RERA-registered project has declared timelines, payment plans, carpet area, and financial escrow rules. HousingCorner works <em>only</em> with RERA-registered inventory, which is your primary legal protection as a buyer.</p>
+      </details>
+
+      <details>
+        <summary>Where do you operate?</summary>
+        <p>We are based in Latur and operate across all 36 districts of Maharashtra. Our on-ground advisory is strongest in Latur, Solapur, Pune, and the broader Marathwada region, with verified listings across the state.</p>
+      </details>
+
+      <details>
+        <summary>Can you help with home loans?</summary>
+        <p>We coordinate home-loan referrals to scheduled banks and NBFCs with whom we have a relationship, and we walk you through documentation. We do not lend, underwrite, or collect EMIs — those remain strictly between you and the bank. This is required by the Act and also, frankly, how it should be.</p>
+      </details>
+
+      <details>
+        <summary>What's the MahaRERA Agent Competency Exam?</summary>
+        <p>Under MahaRERA Order No. 1A/2023, every individual real estate agent (and at least one designated person of every firm) must clear the MahaRERA Agent Competency Examination before they can register or renew. HousingCorner's agent registration is backed by a passed competency certificate, which you are welcome to verify on the MahaRERA portal.</p>
+      </details>
+
+      <details>
+        <summary>What if a project I bought into gets delayed?</summary>
+        <p>Delays happen. Under RERA, the developer is obligated to compensate you as per the declared timeline and terms. HousingCorner will support you with the paperwork and escalation path through MahaRERA — we stay with you past the booking, not just until commission is received.</p>
+      </details>
+
+      <details>
+        <summary>I'm a builder — can I partner with you?</summary>
+        <p>Yes, for RERA-registered projects only. We partner with developers who share our standard on disclosure, paperwork, and buyer conduct. <a href="#contact" style="color: var(--terracotta); border-bottom: 1px solid currentColor;">Get in touch</a> with your project RERA ID and a brief, and we'll schedule a call.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================== -->
+<!-- CONTACT -->
+<!-- =========================================================== -->
+<section id="contact" class="contact">
+  <div class="container contact__grid">
+    <div class="contact__left">
+      <span class="eyebrow">Let's talk</span>
+      <h2 style="margin-top: 16px;">Your next home starts with one message.</h2>
+      <p style="color: var(--stone); margin-top: 16px; max-width: 440px;">Send us what you're looking for — budget, location, timeline. We reply within one business day with a written shortlist. No spam, no cold calls.</p>
+
+      <div class="contact__channels">
+        <a class="contact__channel" href="https://wa.me/918484802019?text=Hi%20HousingCorner%2C%20I%27d%20like%20to%20enquire%20about%20a%20property." target="_blank" rel="noopener">
+          <div class="contact__channel-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.78 11.78 0 0 0 12 0a11.9 11.9 0 0 0-10.3 17.8L0 24l6.38-1.66A11.9 11.9 0 0 0 12 24c6.6 0 11.94-5.34 11.94-11.94a11.85 11.85 0 0 0-3.42-8.58zM12 21.8a9.82 9.82 0 0 1-5-1.4l-.36-.22-3.78 1 1-3.68-.24-.38A9.9 9.9 0 1 1 12 21.8zm5.44-7.36c-.3-.15-1.76-.87-2.04-.97-.27-.1-.47-.15-.67.15s-.77.97-.94 1.17c-.17.2-.35.22-.65.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3 0-.46.13-.6.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.14 4.55.72.3 1.28.5 1.72.63.72.23 1.38.2 1.9.12.58-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.08-.13-.27-.2-.57-.35z"/></svg>
+          </div>
+          <div>
+            <strong>WhatsApp Business</strong>
+            <span>+91 84848 02019 (Ram) · +91 95619 04097 (Rahul) · fastest reply</span>
+          </div>
+        </a>
+
+        <a class="contact__channel" href="mailto:info@housingcorner.in">
+          <div class="contact__channel-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <strong>info@housingcorner.in</strong>
+            <span>For detailed enquiries and paperwork</span>
+          </div>
+        </a>
+
+        <a class="contact__channel" href="#" onclick="return false;">
+          <div class="contact__channel-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <strong>Latur, Maharashtra</strong>
+            <span>By appointment · Mon–Sat 10am–7pm</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <form class="form" onsubmit="return handleSubmit(event)">
+      <h3>Tell us what you're looking for</h3>
+      <p>We respond within one business day.</p>
+
+      <label for="f-name">Your name</label>
+      <input id="f-name" name="name" type="text" required placeholder="Full name" autocomplete="name">
+
+      <label for="f-phone">WhatsApp number</label>
+      <input id="f-phone" name="phone" type="tel" required placeholder="+91 98XXX XXXXX" autocomplete="tel">
+
+      <label for="f-type">Looking for</label>
+      <select id="f-type" name="type" required>
+        <option value="">Select one</option>
+        <option value="residential">Residential property</option>
+        <option value="commercial">Commercial property</option>
+        <option value="both">Not sure yet — advisory</option>
+        <option value="builder">Builder partnership enquiry</option>
+      </select>
+
+      <label for="f-location">Preferred location</label>
+      <input id="f-location" name="location" type="text" placeholder="City, locality, or 'anywhere in Maharashtra'">
+
+      <label for="f-budget">Budget (optional)</label>
+      <input id="f-budget" name="budget" type="text" placeholder="₹ range — e.g. 40–60 L">
+
+      <label for="f-notes">Anything else?</label>
+      <textarea id="f-notes" name="notes" rows="3" placeholder="Timeline, must-haves, RERA concerns — anything helpful"></textarea>
+
+      <button class="btn btn--primary" type="submit">Send enquiry</button>
+      <p class="form__note">By submitting, you agree to be contacted by HousingCorner. We never share your details.</p>
+    </form>
+  </div>
+</section>
+
+<!-- =========================================================== -->
+<!-- FOOTER -->
+<!-- =========================================================== -->
+<footer>
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <svg viewBox="0 0 720 200" aria-hidden="true">
+          <g transform="translate(0, 0) scale(0.75)">
+            <path d="M 58 220 L 58 128 Q 58 120 64 114 L 124 56 Q 130 50 136 56 L 196 114 Q 202 120 202 128 L 202 220 Q 202 226 196 226 L 64 226 Q 58 226 58 220 Z" fill="#F5F0E6"/>
+            <circle cx="130" cy="158" r="13" fill="#1F2A24"/>
+            <path d="M 118 168 Q 118 164 122 164 L 138 164 Q 142 164 142 168 L 142 220 L 118 220 Z" fill="#1F2A24"/>
+            <path d="M 130 64 Q 130 38 152 32 Q 150 52 138 60 Q 134 62 130 64 Z" fill="#8BA888"/>
+            <path d="M 196 114 L 202 128 L 188 128 Z" fill="#C77E52"/>
+          </g>
+          <text x="220" y="120" font-family="'Fraunces',Georgia,serif" font-weight="500" font-size="64" fill="#F5F0E6" letter-spacing="-1">HousingCorner</text>
+          <text x="222" y="158" font-family="'Inter',Arial,sans-serif" font-weight="400" font-size="18" fill="#8BA888" letter-spacing="2">Your corner of property.</text>
+        </svg>
+        <p>Maharashtra's tech-forward real estate channel partner. RERA-registered inventory only. Documented every step.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">Why us</a></li>
+          <li><a href="#properties">Listings</a></li>
+          <li><a href="#process">How it works</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Reach us</h4>
+        <ul>
+          <li><a href="mailto:info@housingcorner.in">info@housingcorner.in</a></li>
+          <li><a href="https://wa.me/918484802019">+91 84848 02019 (Ram)</a></li>
+          <li><a href="https://wa.me/919561904097">+91 95619 04097 (Rahul)</a></li>
+          <li>Latur, Maharashtra</li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Social</h4>
+        <ul>
+          <li><a href="https://instagram.com/housingcorner" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://linkedin.com/company/housingcorner" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://facebook.com/HousingCorner" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://youtube.com/@HousingCorner" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__compliance">
+      <strong style="color: var(--cream);">MahaRERA Agent Registration:</strong> Application in process  ·  Founder-led firm · Ram Kole &amp; Rahul Awale, Latur.
+      HousingCorner operates strictly within the framework of the Real Estate (Regulation and Development) Act, 2016 and rules issued by MahaRERA. We do not facilitate unregistered projects. Information on this website is indicative; always verify project details on the official MahaRERA portal (maharera.maharashtra.gov.in) before transacting.
+    </div>
+
+    <div class="footer__bottom">
+      <span>© <span id="year">2026</span> HousingCorner · All rights reserved.</span>
+      <span>Built with care in Maharashtra.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a class="whatsapp-float" href="https://wa.me/918484802019?text=Hi%20HousingCorner" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.78 11.78 0 0 0 12 0a11.9 11.9 0 0 0-10.3 17.8L0 24l6.38-1.66A11.9 11.9 0 0 0 12 24c6.6 0 11.94-5.34 11.94-11.94a11.85 11.85 0 0 0-3.42-8.58zM12 21.8a9.82 9.82 0 0 1-5-1.4l-.36-.22-3.78 1 1-3.68-.24-.38A9.9 9.9 0 1 1 12 21.8zm5.44-7.36c-.3-.15-1.76-.87-2.04-.97-.27-.1-.47-.15-.67.15s-.77.97-.94 1.17c-.17.2-.35.22-.65.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3 0-.46.13-.6.14-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.14 4.55.72.3 1.28.5 1.72.63.72.23 1.38.2 1.9.12.58-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.08-.13-.27-.2-.57-.35z"/></svg>
+</a>
+
+<script>
+  // Auto-update year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Form handler — sends to WhatsApp as a prefilled message
+  function handleSubmit(e) {
+    e.preventDefault();
+    const f = e.target;
+    const name = f.name.value.trim();
+    const phone = f.phone.value.trim();
+    const type = f.type.value;
+    const location = f.location.value.trim();
+    const budget = f.budget.value.trim();
+    const notes = f.notes.value.trim();
+
+    const msg = `Hi HousingCorner!%0A%0A` +
+      `*Name:* ${encodeURIComponent(name)}%0A` +
+      `*Phone:* ${encodeURIComponent(phone)}%0A` +
+      `*Looking for:* ${encodeURIComponent(type)}%0A` +
+      `*Location:* ${encodeURIComponent(location || '—')}%0A` +
+      `*Budget:* ${encodeURIComponent(budget || '—')}%0A` +
+      `*Notes:* ${encodeURIComponent(notes || '—')}`;
+
+    // Open WhatsApp with prefilled message. Replace 918484802019 with real number.
+    window.open(`https://wa.me/918484802019?text=${msg}`, '_blank');
+    return false;
+  }
+
+  // Close mobile nav on link click
+  document.querySelectorAll('.nav__links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('nav').classList.remove('is-open'));
+  });
+</script>
+
+</body>
+</html>
+List.remove('is-open'));
+  });
+</script>
+
+</body>
+</html>
