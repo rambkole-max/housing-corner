@@ -39,7 +39,7 @@
   "url": "https://www.housingcorner.in/",
   "image": "https://www.housingcorner.in/og-image.png",
   "description": "Maharashtra's tech-forward real estate channel partner. Verified residential and commercial properties from RERA-registered builders.",
-  "email": "info@housingcorner.in",
+  "email": "hello@housingcorner.in",
   "telephone": "+91-95619-58445",
   "founder": [
     { "@type": "Person", "name": "Ram Kole" },
@@ -426,17 +426,6 @@ section { padding: clamp(56px, 8vw, 112px) 0; }
   margin-top: 48px;
 }
 .why-item { display: flex; gap: 16px; align-items: flex-start; }
-.why-item__num {
-  flex: 0 0 auto;
-  width: 40px; height: 40px;
-  border-radius: 10px;
-  background: var(--forest);
-  color: var(--cream);
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 1.15rem;
-  font-weight: 500;
-  display: flex; align-items: center; justify-content: center;
-}
 .why-item h3 { color: var(--forest); margin-bottom: 6px; font-size: 1.15rem; }
 .why-item p { color: var(--stone); font-size: 0.95rem; }
 
@@ -580,33 +569,6 @@ section { padding: clamp(56px, 8vw, 112px) 0; }
 }
 
 /* ===== Process ===== */
-.process__timeline {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 32px;
-  margin-top: 48px;
-  position: relative;
-}
-.process-step {
-  position: relative;
-  padding: 28px 24px;
-  background: #fff;
-  border-radius: var(--radius);
-  border: 1px solid rgba(139, 168, 136, 0.3);
-}
-.process-step__num {
-  position: absolute;
-  top: -16px; left: 24px;
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  background: var(--terracotta);
-  color: var(--cream);
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 1.1rem;
-  display: flex; align-items: center; justify-content: center;
-}
-.process-step h3 { color: var(--forest); margin-top: 12px; font-size: 1.1rem; }
-.process-step p { color: var(--stone); font-size: 0.92rem; margin-top: 6px; }
 
 /* ===== About ===== */
 .about {
@@ -780,6 +742,102 @@ footer a:hover { color: var(--terracotta); }
 @media (max-width: 720px) {
   .footer__grid { grid-template-columns: 1fr 1fr; gap: 28px; }
   .footer__brand { grid-column: 1 / -1; }
+}
+
+
+/* ===== Why: promises, not steps =====
+   These four used to be numbered 1-4, directly above a four-step process that
+   was also numbered 1-4. Two identical-looking sequences back to back read as
+   one long list nobody finished. Icons make it obvious these are parallel
+   promises, not an order of events. */
+.why-item__icon {
+  flex: none;
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 12px;
+  background: rgba(139, 168, 136, 0.18);
+  color: var(--forest);
+}
+
+/* ===== Process: a stepper you actually operate =====
+   This one IS a sequence, so it keeps its numbers and earns an interaction.
+   Built as a real ARIA tablist: arrow keys work, and with JavaScript off every
+   panel is visible, so nothing is hidden from a crawler or a reader. */
+.stepper { margin-top: 8px; }
+.stepper__rail {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  position: relative;
+  margin-bottom: 28px;
+}
+.stepper__rail::before {
+  content: "";
+  position: absolute;
+  top: 21px; left: 12%; right: 12%;
+  height: 2px;
+  background: rgba(139, 168, 136, 0.45);
+  z-index: 0;
+}
+.stepper__step {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  background: transparent;
+  padding: 0 4px 6px;
+  cursor: pointer;
+  text-align: center;
+}
+.stepper__dot {
+  width: 42px; height: 42px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.05rem;
+  background: var(--cream);
+  color: var(--forest-soft);
+  border: 2px solid rgba(139, 168, 136, 0.55);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.stepper__label {
+  font-size: 0.8rem; line-height: 1.35; color: var(--stone);
+  transition: color 0.2s ease;
+}
+.stepper__step:hover .stepper__dot { border-color: var(--forest); color: var(--forest); }
+.stepper__step.is-active .stepper__dot {
+  background: var(--forest); color: var(--cream); border-color: var(--forest);
+  transform: scale(1.06);
+}
+.stepper__step.is-active .stepper__label { color: var(--ink); font-weight: 500; }
+.stepper__step:focus-visible { outline: 3px solid var(--forest); outline-offset: 3px; border-radius: 8px; }
+
+.stepper__panel {
+  display: flex; gap: 22px; align-items: flex-start;
+  background: #fff;
+  border: 1px solid rgba(139, 168, 136, 0.35);
+  border-left: 4px solid var(--terracotta);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+.stepper__panel[hidden] { display: none; }
+.stepper__panel-num {
+  flex: none;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 2.4rem; line-height: 1;
+  color: rgba(199, 126, 82, 0.35);
+}
+.stepper__panel h3 { margin-bottom: 8px; }
+.stepper__panel p { color: var(--stone); }
+
+@media (max-width: 700px) {
+  .stepper__rail { grid-template-columns: repeat(4, 1fr); gap: 2px; }
+  .stepper__rail::before { top: 18px; }
+  .stepper__dot { width: 36px; height: 36px; font-size: 0.95rem; }
+  .stepper__label { font-size: 0.68rem; }
+  .stepper__panel { padding: 22px; gap: 16px; }
+  .stepper__panel-num { font-size: 1.8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stepper__dot { transition: none; }
+  .stepper__step.is-active .stepper__dot { transform: none; }
 }
 
 /* ===== Floating WhatsApp ===== */
@@ -1038,28 +1096,28 @@ footer a:hover { color: var(--terracotta); }
 
     <div class="why__grid">
       <div class="why-item">
-        <div class="why-item__num">1</div>
+        <div class="why-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <div>
           <h3>RERA-registered only</h3>
           <p>We do not solicit, advertise, or facilitate any unregistered project. Period. Every listing is verified against the MahaRERA portal.</p>
         </div>
       </div>
       <div class="why-item">
-        <div class="why-item__num">2</div>
+        <div class="why-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div>
         <div>
           <h3>Documented, not verbal</h3>
           <p>Every introduction, site visit, payment plan, and possession timeline is logged in writing and shared with you.</p>
         </div>
       </div>
       <div class="why-item">
-        <div class="why-item__num">3</div>
+        <div class="why-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
         <div>
           <h3>Buyer-first advisory</h3>
           <p>Builders pay us, but we work for you. You will hear the honest version — including when a project isn't the right fit.</p>
         </div>
       </div>
       <div class="why-item">
-        <div class="why-item__num">4</div>
+        <div class="why-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 9-12h-7l1-8Z"/></svg></div>
         <div>
           <h3>Tech-forward workflows</h3>
           <p>Structured listings, WhatsApp-based discovery, CRM-led follow-up. No chasing, no repeating yourself.</p>
@@ -1081,26 +1139,40 @@ footer a:hover { color: var(--terracotta); }
       <p>Four steps. Transparent timelines. Nothing hidden.</p>
     </div>
 
-    <div class="process__timeline">
-      <div class="process-step">
-        <div class="process-step__num">1</div>
-        <h3>Tell us what you want</h3>
-        <p>Budget, location, timeline, residential or commercial. A 10-minute call or WhatsApp exchange is enough.</p>
+    <div class="stepper">
+      <div class="stepper__rail" role="tablist" aria-label="How it works">
+        <button class="stepper__step is-active" role="tab" id="stept-1" aria-controls="stepp-1" aria-selected="true" tabindex="0"><span class="stepper__dot">1</span><span class="stepper__label">Tell us what you want</span></button>
+        <button class="stepper__step" role="tab" id="stept-2" aria-controls="stepp-2" aria-selected="false" tabindex="-1"><span class="stepper__dot">2</span><span class="stepper__label">We shortlist RERA-registered options</span></button>
+        <button class="stepper__step" role="tab" id="stept-3" aria-controls="stepp-3" aria-selected="false" tabindex="-1"><span class="stepper__dot">3</span><span class="stepper__label">Site visits &amp; honest disclosure</span></button>
+        <button class="stepper__step" role="tab" id="stept-4" aria-controls="stepp-4" aria-selected="false" tabindex="-1"><span class="stepper__dot">4</span><span class="stepper__label">Loan, paperwork, registration</span></button>
       </div>
-      <div class="process-step">
-        <div class="process-step__num">2</div>
-        <h3>We shortlist RERA-registered options</h3>
-        <p>You receive a written shortlist with payment plans, possession dates, and MahaRERA registration numbers — sourced from the portal.</p>
+      <div class="stepper__panel is-active" role="tabpanel" id="stepp-1" aria-labelledby="stept-1">
+        <div class="stepper__panel-num">1</div>
+        <div>
+          <h3>Tell us what you want</h3>
+          <p>Budget, location, timeline, residential or commercial. A 10-minute call or WhatsApp exchange is enough.</p>
+        </div>
       </div>
-      <div class="process-step">
-        <div class="process-step__num">3</div>
-        <h3>Site visits &amp; honest disclosure</h3>
-        <p>We accompany you to sites. You see the good and the honest concerns. No pressure. No scripted selling.</p>
+      <div class="stepper__panel" role="tabpanel" id="stepp-2" aria-labelledby="stept-2" hidden>
+        <div class="stepper__panel-num">2</div>
+        <div>
+          <h3>We shortlist RERA-registered options</h3>
+          <p>You receive a written shortlist with payment plans, possession dates, and MahaRERA registration numbers — sourced from the portal.</p>
+        </div>
       </div>
-      <div class="process-step">
-        <div class="process-step__num">4</div>
-        <h3>Loan, paperwork, registration</h3>
-        <p>We coordinate home-loan referrals, paperwork checks, and walk with you till the registrar's office.</p>
+      <div class="stepper__panel" role="tabpanel" id="stepp-3" aria-labelledby="stept-3" hidden>
+        <div class="stepper__panel-num">3</div>
+        <div>
+          <h3>Site visits &amp; honest disclosure</h3>
+          <p>We accompany you to sites. You see the good and the honest concerns. No pressure. No scripted selling.</p>
+        </div>
+      </div>
+      <div class="stepper__panel" role="tabpanel" id="stepp-4" aria-labelledby="stept-4" hidden>
+        <div class="stepper__panel-num">4</div>
+        <div>
+          <h3>Loan, paperwork, registration</h3>
+          <p>We coordinate home-loan referrals, paperwork checks, and walk with you till the registrar's office.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1213,12 +1285,12 @@ footer a:hover { color: var(--terracotta); }
           </div>
         </a>
 
-        <a class="contact__channel" href="mailto:info@housingcorner.in">
+        <a class="contact__channel" href="mailto:hello@housingcorner.in">
           <div class="contact__channel-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
           <div>
-            <strong>info@housingcorner.in</strong>
+            <strong>hello@housingcorner.in</strong>
             <span>For detailed enquiries and paperwork</span>
           </div>
         </a>
@@ -1304,7 +1376,7 @@ footer a:hover { color: var(--terracotta); }
       <div class="footer__col">
         <h4>Reach us</h4>
         <ul>
-          <li><a href="mailto:info@housingcorner.in">info@housingcorner.in</a></li>
+          <li><a href="mailto:hello@housingcorner.in">hello@housingcorner.in</a></li>
           <li><a href="tel:+919561958445">+91 95619 58445 — Ram Kole</a></li>
           <li><a href="tel:+919561904097">+91 95619 04097 — Rahul Awale</a></li>
           <li>Maharashtra</li>
@@ -1414,6 +1486,48 @@ footer a:hover { color: var(--terracotta); }
       target.setAttribute('tabindex', '-1');
       target.focus({ preventScroll: true });
     });
+  })();
+
+
+  /* ---------------------------------------------------------------
+     Process stepper. Progressive enhancement: the markup ships with
+     every panel present, and only once this runs do the inactive
+     ones hide. No JavaScript means all four steps simply read as a
+     list — which is what a crawler sees too.
+     --------------------------------------------------------------- */
+  (function () {
+    var rail = document.querySelector('.stepper__rail');
+    if (!rail) return;
+    var tabs = Array.prototype.slice.call(rail.querySelectorAll('.stepper__step'));
+    var panels = Array.prototype.slice.call(document.querySelectorAll('.stepper__panel'));
+
+    function show(i) {
+      tabs.forEach(function (t, n) {
+        var on = n === i;
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+      });
+      panels.forEach(function (p, n) {
+        p.hidden = n !== i;
+        p.classList.toggle('is-active', n === i);
+      });
+    }
+
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () { show(i); });
+      tab.addEventListener('keydown', function (e) {
+        var next = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1
+                 : e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : null;
+        if (next === null) return;
+        e.preventDefault();
+        next = (next + tabs.length) % tabs.length;
+        show(next);
+        tabs[next].focus();
+      });
+    });
+
+    show(0);
   })();
 
   // Close mobile nav on link click
