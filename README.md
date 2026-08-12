@@ -9,8 +9,9 @@ to preview. Upload the whole folder to a static host to go live.
 landing-page/
 ├── index.html                  Home page (self-contained, inline CSS)
 ├── og-image.png / .svg         Share preview for the home page
-├── favicon-32.png              Tab icon fallback
-├── favicon-192.png             Android home screen
+├── favicon.ico                 Browsers request this by default — keep at root
+├── favicon.svg                 Scalable tab icon
+├── favicon-48/96/192.png       Raster sizes; Google wants one above 48px
 ├── apple-touch-icon.png        iOS home screen (iOS ignores SVG favicons)
 ├── sitemap.xml                 Submit once at Google Search Console
 ├── robots.txt
@@ -67,8 +68,28 @@ All fabricated listing placeholders are **gone** as of 12 Aug 2026. What remains
 
 | Placeholder | Where to find your value | Occurrences |
 |---|---|---|
-| `application in process` → real MahaRERA Agent Reg. no. | Replace once issued | 5 |
+| Rahul's MahaRERA agent registration number | Publish it — see below | — |
+| Firm-level MahaRERA registration for HousingCorner | Replace the "in process" line once issued | 4 |
 | Street-level office address | For the contact block, letterhead, and Google Business | — |
+
+### Publish the registration number
+
+The site now says transactions are handled by **Rahul Awale, MahaRERA-registered
+real estate agent**, and that HousingCorner's own firm-level registration is in
+process. Both statements are true and neither claims the firm holds a licence it
+doesn't.
+
+**Send me Rahul's registration number and I'll put it on the page.** A number a
+buyer can paste into the MahaRERA portal is worth far more than the words
+"RERA registered" — it converts a claim into a fact they can check in a minute.
+Until then the FAQ says "ask us for the registration number and we will send it",
+which is honest but costs you the easy proof.
+
+**Do not shorten this to "HousingCorner is MahaRERA registered."** The certificate
+is in Rahul's personal name. The firm's application is separate and still pending,
+and a firm claiming a registration it doesn't hold is exactly what MahaRERA acts
+on — on a site whose entire pitch is documentation, it is also the worst possible
+thing to be caught doing.
 
 ### ⚠️ Open item: confirm the possession dates on the official portal
 
