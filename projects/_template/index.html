@@ -808,6 +808,49 @@
   /* Image slots degrade to a branded placeholder until the photo is uploaded.
      Drop a correctly-named file into this folder and it appears automatically —
      no HTML editing needed. */
+  /* ---------------------------------------------------------------
+     In-page links scroll without stacking browser history.
+
+     By default every "#section" tap pushes a history entry, so on a
+     phone the back button walks backwards through the sections a
+     visitor tapped instead of leaving the page. After six chip taps
+     that is six presses of Back before you return to where you came
+     from, and most people give up long before that.
+
+     We scroll manually and use replaceState, so the address bar still
+     shows the section (the link stays shareable) but the history stack
+     keeps exactly one entry for this page. Back means back.
+
+     Without JavaScript the links still work as ordinary anchors.
+     --------------------------------------------------------------- */
+  (function () {
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    document.addEventListener('click', function (e) {
+      var link = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+      if (!link) return;
+
+      var hash = link.getAttribute('href');
+      if (!hash || hash === '#') return;
+
+      var target = document.getElementById(hash.slice(1));
+      if (!target) return;
+
+      e.preventDefault();
+      target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+
+      // Replace rather than push — this is the whole point.
+      if (window.history && history.replaceState) {
+        history.replaceState(null, '', hash);
+      }
+
+      // Keyboard and screen-reader users should land in the section too,
+      // not just see it. preventScroll stops a second competing jump.
+      target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+    });
+  })();
+
   // Rail enquiry — same WhatsApp handoff as the main form, no backend.
   function railEnquire(form) {
     var name = form.name.value.trim();

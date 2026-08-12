@@ -90,6 +90,11 @@ section[id] { scroll-margin-top: 118px; }
 }
 .alt { background: var(--cream-deep); }
 
+/* Sections get tabindex="-1" so an anchor jump also moves keyboard focus.
+   Without this, browsers draw a focus ring around the whole section. */
+[tabindex="-1"]:focus { outline: none; }
+
+
 /* ===== Buttons ===== */
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
