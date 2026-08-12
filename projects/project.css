@@ -20,8 +20,30 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+/* ===========================================================
+   NO SIDEWAYS PAGE SCROLL
+   -----------------------------------------------------------
+   The page itself must never scroll left-right. Individual
+   regions that genuinely need it — a wide table, the chip nav —
+   scroll inside themselves.
+
+   `overflow-x: clip` and NOT `hidden`. Both stop the overflow,
+   but `hidden` turns the root into a scroll container, which
+   silently breaks every `position: sticky` on the page — the
+   header, the desktop rail. `clip` has no such side effect.
+   =========================================================== */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
+}
 body {
+  overflow-x: clip;
+  /* a long unbroken string — maharera.maharashtra.gov.in, a RERA number —
+     is otherwise enough on its own to widen the page on a small phone */
+  overflow-wrap: anywhere;
+  word-break: normal;
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
@@ -44,6 +66,14 @@ h1, h2, h3, h4 {
 h1 { font-size: clamp(2rem, 4.4vw, 3.1rem); }
 h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); margin-bottom: 0.4em; }
 h3 { font-size: 1.2rem; margin-bottom: 0.25em; }
+
+/* Grid and flex items refuse to shrink below their content by default, which
+   is how a long table or a wide word ends up making the whole page scroll
+   sideways — and a sideways-scrolling page drags fixed bars out of alignment. */
+.phero__grid > *, .conn > *, .rates > *, .gallery--mixed > *,
+.gallery__stack > *, .plangrid > *, .specs > *, .amen > *, .facts > *,
+.price > *, .layout > * { min-width: 0; }
+img, table { max-width: 100%; }
 
 .container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: 24px; }
 section { padding: clamp(48px, 6vw, 84px) 0; }
@@ -78,9 +108,17 @@ section[id] { scroll-margin-top: 118px; }
 .btn--whatsapp:hover { background: #1DAE55; transform: translateY(-1px); box-shadow: var(--shadow); }
 
 /* ===== Nav ===== */
-.nav {
+/* The brand bar and the chip nav travel together as one sticky header. Giving
+   the chips their own `top` offset meant guessing the bar's height, and a few
+   pixels out shows as a gap or an overlap on small screens. */
+.stickyhead {
   position: sticky; top: 0; z-index: 50;
   background: rgba(245, 240, 230, 0.94);
+  backdrop-filter: saturate(160%) blur(10px);
+  -webkit-backdrop-filter: saturate(160%) blur(10px);
+}
+.nav {
+  background: transparent;
   backdrop-filter: saturate(160%) blur(10px);
   -webkit-backdrop-filter: saturate(160%) blur(10px);
   border-bottom: 1px solid rgba(139, 168, 136, 0.25);
@@ -108,18 +146,14 @@ section[id] { scroll-margin-top: 118px; }
    is left holding only the brand and the CTA. */
 .chipnav {
   display: block;
-  position: sticky;
-  top: 59px;                   /* sits directly under the sticky brand bar */
-  z-index: 49;
-  background: rgba(245, 240, 230, 0.96);
-  backdrop-filter: saturate(160%) blur(10px);
-  -webkit-backdrop-filter: saturate(160%) blur(10px);
-  border-bottom: 1px solid rgba(139, 168, 136, 0.3);
+  background: transparent;
+  border-top: 1px solid rgba(139, 168, 136, 0.22);
 }
 .chipnav__scroll {
   display: flex;
   gap: 8px;
   overflow-x: auto;
+  overscroll-behavior-x: contain;
   padding: 10px 24px;
   max-width: var(--container);
   margin-inline: auto;
@@ -144,6 +178,13 @@ section[id] { scroll-margin-top: 118px; }
 .chipnav a:hover { background: var(--forest); color: var(--cream); border-color: var(--forest); }
 .chipnav a:active { background: var(--forest); color: var(--cream); }
 @media (max-width: 860px) { .chipnav__scroll { padding: 10px 16px; } }
+
+/* On small screens a long button label may wrap rather than run off the edge. */
+@media (max-width: 560px) {
+  .btn { white-space: normal; text-align: center; }
+  .conn__row { min-width: 0; }
+  .conn__row span { min-width: 0; overflow-wrap: anywhere; }
+}
 
 /* ===========================================================
    DESKTOP SIDEBAR RAIL
@@ -232,6 +273,20 @@ section[id] { scroll-margin-top: 118px; }
   .rail { display: none; }
 }
 
+/* ===== Floating WhatsApp =====
+   Only used on pages that have no action bar of their own — the projects index.
+   Project detail pages drop the element entirely: the action bar covers mobile
+   and the sidebar rail covers desktop, and a bubble on top of either just
+   overlaps the button underneath it. */
+.wa-float {
+  position: fixed; right: 20px; bottom: 20px; z-index: 60;
+  width: 56px; height: 56px; border-radius: 50%; background: #25D366; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 20px rgba(31,42,36,0.25);
+  transition: transform 0.15s ease;
+}
+.wa-float:hover { transform: scale(1.06); }
+
 /* ===== Mobile action bar =====
    The floating WhatsApp bubble is easy to miss and says nothing about what
    happens if you tap it. A labelled bar that is always on screen is the single
@@ -245,7 +300,7 @@ section[id] { scroll-margin-top: 118px; }
     position: fixed;
     left: 0; right: 0; bottom: 0;
     z-index: 60;
-    padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+    padding: 10px max(14px, env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left));
     background: rgba(245, 240, 230, 0.97);
     backdrop-filter: saturate(160%) blur(12px);
     -webkit-backdrop-filter: saturate(160%) blur(12px);
@@ -254,10 +309,8 @@ section[id] { scroll-margin-top: 118px; }
   }
   .actionbar .btn { justify-content: center; padding: 13px 18px; }
   .actionbar__wa { width: 52px; padding: 0; }
-  /* the floating bubble would sit on top of the bar — the bar replaces it */
-  .wa-float { display: none; }
   /* stop the bar covering the last of the page */
-  body { padding-bottom: 76px; }
+  body { padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
 }
 
 /* ===== Breadcrumb ===== */
@@ -403,7 +456,10 @@ section[id] { scroll-margin-top: 118px; }
 .phero__logo img { width: 100%; height: auto; display: block; }
 
 /* ===== Tables ===== */
-.tablewrap { overflow-x: auto; border: 1px solid rgba(139,168,136,0.4); border-radius: var(--radius); background: var(--cream); }
+.tablewrap {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;   /* table scroll must not chain to the page */
+  -webkit-overflow-scrolling: touch; border: 1px solid rgba(139,168,136,0.4); border-radius: var(--radius); background: var(--cream); }
 table { width: 100%; border-collapse: collapse; font-size: 0.93rem; min-width: 520px; }
 caption { text-align: left; padding: 16px 18px 0; font-size: 0.85rem; color: var(--stone); }
 th, td { padding: 13px 18px; text-align: left; border-bottom: 1px solid rgba(139,168,136,0.25); }
@@ -505,17 +561,8 @@ details p { margin-top: 12px; color: var(--stone); font-size: 0.95rem; line-heig
 }
 .foot__legal strong { color: rgba(245,240,230,0.85); }
 
-/* ===== Floating WhatsApp ===== */
-.wa-float {
-  position: fixed; right: 20px; bottom: 20px; z-index: 60;
-  width: 56px; height: 56px; border-radius: 50%; background: #25D366; color: #fff;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 6px 20px rgba(31,42,36,0.25);
-  transition: transform 0.15s ease;
-}
-.wa-float:hover { transform: scale(1.06); }
 
 @media print {
-  .nav, .wa-float, .enq__cta { display: none; }
+  .stickyhead, .actionbar, .wa-float, .enq__cta { display: none; }
   body { background: #fff; }
 }

@@ -93,8 +93,13 @@
 
 /* ===== Reset ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+/* The page never scrolls sideways. `clip` rather than `hidden`, because
+   `hidden` on the root makes it a scroll container and breaks position:sticky
+   — which the header relies on. */
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
 body {
+  overflow-x: clip;
+  overflow-wrap: anywhere;
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
@@ -131,6 +136,12 @@ p  { color: var(--ink); }
   border-radius: 999px;
   background: rgba(139, 168, 136, 0.1);
 }
+
+/* Grid and flex items refuse to shrink below their content by default, which
+   is how one wide element makes the whole page scroll sideways on a phone. */
+.hero__grid > *, .properties__grid > *, .services__grid > *, .why__grid > *,
+.process__grid > *, .contact__grid > *, .footer__grid > * { min-width: 0; }
+img, table { max-width: 100%; }
 
 /* ===== Layout ===== */
 .container {
@@ -238,6 +249,34 @@ section { padding: clamp(56px, 8vw, 112px) 0; }
   }
   .nav.is-open .nav__links a { padding: 14px 0; border-bottom: 1px solid rgba(139, 168, 136, 0.2); }
   .nav__cta .btn { padding: 10px 16px; font-size: 0.85rem; }
+}
+
+/* On a narrow phone the wordmark, the CTA and the menu button together are
+   wider than the screen, so the button rides over the logo. Everything steps
+   down a size, and the brand is allowed to shrink and ellipsise rather than
+   push its neighbours off the edge. */
+@media (max-width: 560px) {
+  .nav__inner { padding: 10px 16px; gap: 10px; }
+  .nav__brand { min-width: 0; gap: 8px; }
+  .nav__brand svg { height: 30px; }
+  .nav__brand-text {
+    font-size: 1.05rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .nav__cta { flex: none; gap: 2px; }
+  .nav__cta .btn { padding: 9px 12px; font-size: 0.78rem; }
+  .nav__toggle { font-size: 1.35rem; padding: 6px 4px; }
+}
+
+/* Below this the wordmark goes; the mark alone still identifies the site and
+   the CTA matters more than the second half of a logotype. */
+@media (max-width: 380px) {
+  .nav__brand-text { display: none; }
+}
+@media (max-width: 560px) {
+  .btn { white-space: normal; text-align: center; }
 }
 
 /* ===== Hero ===== */
