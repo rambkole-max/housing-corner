@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="HousingCorner — Your corner of property">
+  <title>HousingCorner — Your corner of property</title>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#F5F0E6"/>
+
+  <!-- Corner accent rules -->
+  <path d="M 6 6 L 156 6 M 6 6 L 6 156" stroke="#C77E52" stroke-width="10" fill="none"/>
+  <path d="M 1194 624 L 1044 624 M 1194 624 L 1194 474" stroke="#2F5D3A" stroke-width="10" fill="none"/>
+
+  <!-- Soft sage wash, bottom right -->
+  <circle cx="1120" cy="150" r="230" fill="#8BA888" opacity="0.13"/>
+
+  <!-- Icon -->
+  <g transform="translate(96, 150) scale(0.86)">
+    <path d="M 58 220 L 58 128 Q 58 120 64 114 L 124 56 Q 130 50 136 56 L 196 114 Q 202 120 202 128 L 202 220 Q 202 226 196 226 L 64 226 Q 58 226 58 220 Z" fill="#2F5D3A"/>
+    <circle cx="130" cy="158" r="13" fill="#F5F0E6"/>
+    <path d="M 118 168 Q 118 164 122 164 L 138 164 Q 142 164 142 168 L 142 220 L 118 220 Z" fill="#F5F0E6"/>
+    <path d="M 130 64 Q 130 38 152 32 Q 150 52 138 60 Q 134 62 130 64 Z" fill="#8BA888"/>
+    <path d="M 130 70 L 130 64" stroke="#8BA888" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 196 114 L 202 128 L 188 128 Z" fill="#C77E52"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="330" y="250"
+        font-family="Fraunces, 'Playfair Display', Georgia, 'Century Schoolbook L', 'Bitstream Charter', serif"
+        font-weight="500" font-size="86" fill="#1F2A24" letter-spacing="-2">HousingCorner</text>
+
+  <!-- Tagline -->
+  <text x="334" y="308"
+        font-family="Inter, 'Helvetica Neue', 'Liberation Sans', Arial, sans-serif"
+        font-weight="400" font-size="27" fill="#5C7A4F" letter-spacing="3.5">Your corner of property.</text>
+
+  <!-- Divider -->
+  <line x1="334" y1="358" x2="1010" y2="358" stroke="#C77E52" stroke-width="2" opacity="0.55"/>
+
+  <!-- Positioning line -->
+  <text x="334" y="416"
+        font-family="Inter, 'Helvetica Neue', 'Liberation Sans', Arial, sans-serif"
+        font-weight="600" font-size="31" fill="#2F5D3A">Maharashtra's tech-forward channel partner</text>
+
+  <!-- Proof chips -->
+  <g font-family="Inter, 'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="21" font-weight="500">
+    <rect x="334" y="452" width="268" height="50" rx="25" fill="#2F5D3A"/>
+    <text x="468" y="484" fill="#F5F0E6" text-anchor="middle">RERA-registered only</text>
+
+    <rect x="618" y="452" width="292" height="50" rx="25" fill="none" stroke="#8BA888" stroke-width="2"/>
+    <text x="764" y="484" fill="#2F5D3A" text-anchor="middle">Documented every step</text>
+  </g>
+
+  <!-- Footer strip -->
+  <text x="334" y="556"
+        font-family="Inter, 'Helvetica Neue', 'Liberation Sans', Arial, sans-serif"
+        font-size="20" fill="#8A7E6E" letter-spacing="1.2">Latur · serving all 36 districts of Maharashtra  ·  housingcorner.in</text>
+</svg>
