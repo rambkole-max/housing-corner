@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-label="HousingCorner yard sign">
+  <title>HousingCorner — yard sign / for-sale board (3:4)</title>
+
+  <!-- Cream body -->
+  <rect width="900" height="1200" fill="#F5F0E6"/>
+
+  <!-- Top forest-green header panel -->
+  <rect width="900" height="360" fill="#2F5D3A"/>
+
+  <!-- Terracotta corner stripe top-right -->
+  <path d="M 900 0 L 900 160 L 740 0 Z" fill="#C77E52"/>
+
+  <!-- Cream icon top-left of header -->
+  <g transform="translate(60, 80) scale(0.85)">
+    <path d="M 58 220 L 58 128 Q 58 120 64 114 L 124 56 Q 130 50 136 56 L 196 114 Q 202 120 202 128 L 202 220 Q 202 226 196 226 L 64 226 Q 58 226 58 220 Z" fill="#F5F0E6"/>
+    <circle cx="130" cy="158" r="13" fill="#2F5D3A"/>
+    <path d="M 118 168 Q 118 164 122 164 L 138 164 Q 142 164 142 168 L 142 220 L 118 220 Z" fill="#2F5D3A"/>
+    <path d="M 130 64 Q 130 38 152 32 Q 150 52 138 60 Q 134 62 130 64 Z" fill="#8BA888"/>
+  </g>
+
+  <!-- Wordmark in header -->
+  <text x="290" y="200"
+        font-family="'Fraunces','Playfair Display',Georgia,serif"
+        font-weight="500" font-size="64" fill="#F5F0E6" letter-spacing="-1">HousingCorner</text>
+  <text x="292" y="244"
+        font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+        font-weight="400" font-size="20" fill="#8BA888" letter-spacing="3">Your corner of property.</text>
+
+  <!-- Status label -->
+  <text x="450" y="500" text-anchor="middle"
+        font-family="'Fraunces',Georgia,serif"
+        font-weight="500" font-size="130" fill="#2F5D3A" letter-spacing="-3">FOR SALE</text>
+  <text x="450" y="560" text-anchor="middle"
+        font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+        font-weight="400" font-size="22" fill="#8A7E6E" letter-spacing="6">RERA-REGISTERED PROJECT</text>
+
+  <!-- Property details placeholder -->
+  <rect x="100" y="640" width="700" height="280" rx="12" fill="#F5F0E6" stroke="#C77E52" stroke-width="2"/>
+  <text x="450" y="700" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-weight="500" font-size="36" fill="#1F2A24">[Project name]</text>
+  <text x="450" y="750" text-anchor="middle" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="22" fill="#1F2A24">[2/3 BHK · starting ₹XX L]</text>
+  <text x="450" y="800" text-anchor="middle" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="20" fill="#5C7A4F">[Location — Taluka, Dist.]</text>
+  <text x="450" y="850" text-anchor="middle" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="20" fill="#5C7A4F">MahaRERA: [Project RERA No.]</text>
+
+  <!-- Contact footer -->
+  <rect y="1060" width="900" height="140" fill="#2F5D3A"/>
+  <text x="450" y="1112" text-anchor="middle"
+        font-family="'Fraunces',Georgia,serif"
+        font-weight="500" font-size="36" fill="#F5F0E6">+91 84848 02019  ·  +91 95619 04097</text>
+  <text x="450" y="1158" text-anchor="middle"
+        font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="18" fill="#8BA888" letter-spacing="3">WWW.HOUSINGCORNER.IN  ·  INFO@HOUSINGCORNER.IN</text>
+</svg>

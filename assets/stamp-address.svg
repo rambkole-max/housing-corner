@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" width="70mm" height="30mm" role="img" aria-label="HousingCorner address stamp">
+  <title>Address stamp — 70 x 30 mm — single colour artwork</title>
+  <!-- border -->
+  <rect x="8" y="8" width="684" height="284" rx="18" fill="none" stroke="#000000" stroke-width="5"/>
+
+  <text x="350" y="80" text-anchor="middle"
+        font-family="'Fraunces','Playfair Display',Georgia,serif"
+        font-weight="600" font-size="58" fill="#000000" letter-spacing="0.5">HousingCorner</text>
+  <text x="350" y="122" text-anchor="middle"
+        font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+        font-weight="400" font-size="26" fill="#000000" letter-spacing="2">YOUR CORNER OF PROPERTY</text>
+
+  <line x1="60" y1="150" x2="640" y2="150" stroke="#000000" stroke-width="2"/>
+
+  <!-- Address lines: replace underscores with final office address before printing -->
+  <text x="350" y="196" text-anchor="middle"
+        font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+        font-weight="500" font-size="30" fill="#000000">________________________________</text>
+  <text x="350" y="240" text-anchor="middle"
+        font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+        font-weight="500" font-size="30" fill="#000000">Latur, Maharashtra – 413512</text>
+  <text x="350" y="278" text-anchor="middle"
+        font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+        font-weight="400" font-size="26" fill="#000000">Mob: 95619 58445  ·  MahaRERA No: __________</text>
+</svg>

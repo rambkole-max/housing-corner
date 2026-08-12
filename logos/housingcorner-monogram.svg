@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-label="HousingCorner monogram">
+  <title>HousingCorner — HC monogram</title>
+  <rect width="260" height="260" rx="130" fill="#F5F0E6"/>
+
+  <!-- Forest-green H -->
+  <g fill="#1F2A24" font-family="'Fraunces','Playfair Display',Georgia,serif" font-weight="600" font-size="150" letter-spacing="-6">
+    <text x="36" y="172">H</text>
+  </g>
+
+  <!-- Terracotta C as arc -->
+  <path d="M 220 180 a 48 48 0 1 1 0 -96"
+        fill="none" stroke="#C77E52" stroke-width="18" stroke-linecap="round"/>
+
+  <!-- Sage leaf between -->
+  <path d="M 136 86 Q 136 60 158 54 Q 156 74 144 82 Q 140 84 136 86 Z" fill="#8BA888"/>
+
+  <!-- Small right-angle corner accent -->
+  <path d="M 222 224 L 236 224 L 236 210" fill="none" stroke="#C77E52" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

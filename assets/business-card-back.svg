@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550" role="img" aria-label="HousingCorner business card — back">
+  <title>HousingCorner — business card (back) · 90×55 mm</title>
+
+  <!-- Forest green background -->
+  <rect width="900" height="550" fill="#2F5D3A"/>
+
+  <!-- Terracotta corner accent (top-left) -->
+  <path d="M 0 0 L 70 0 L 0 70 Z" fill="#C77E52" opacity="0.95"/>
+
+  <!-- Giant cream monogram / icon centered as a watermark -->
+  <g transform="translate(300, 60) scale(1.7)" opacity="0.95">
+    <path d="M 58 220 L 58 128 Q 58 120 64 114 L 124 56 Q 130 50 136 56 L 196 114 Q 202 120 202 128 L 202 220 Q 202 226 196 226 L 64 226 Q 58 226 58 220 Z" fill="#F5F0E6"/>
+    <circle cx="130" cy="158" r="13" fill="#2F5D3A"/>
+    <path d="M 118 168 Q 118 164 122 164 L 138 164 Q 142 164 142 168 L 142 220 L 118 220 Z" fill="#2F5D3A"/>
+    <path d="M 130 64 Q 130 38 152 32 Q 150 52 138 60 Q 134 62 130 64 Z" fill="#8BA888"/>
+    <path d="M 196 114 L 202 128 L 188 128 Z" fill="#C77E52"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="450" y="520" text-anchor="middle"
+        font-family="'Fraunces','Playfair Display',Georgia,serif"
+        font-weight="500" font-size="38" fill="#F5F0E6" letter-spacing="-1">HousingCorner</text>
+  <text x="452" y="542" text-anchor="middle"
+        font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+        font-weight="400" font-size="13" fill="#8BA888" letter-spacing="3">Your corner of property.</text>
+</svg>

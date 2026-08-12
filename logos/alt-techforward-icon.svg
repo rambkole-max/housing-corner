@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-label="HousingCorner alt tech-forward icon">
+  <title>HousingCorner — alt tech-forward icon (reference only)</title>
+  <rect width="260" height="260" rx="40" fill="#0B3D2E"/>
+  <!-- geometric house mark -->
+  <path d="M 60 190 L 60 130 L 130 70 L 200 130 L 200 190 Z" fill="none" stroke="#00B4D8" stroke-width="8" stroke-linejoin="round"/>
+  <rect x="115" y="150" width="30" height="40" fill="#00B4D8"/>
+  <!-- cyan corner bracket -->
+  <path d="M 170 70 L 200 70 L 200 100" fill="none" stroke="#00B4D8" stroke-width="6" stroke-linecap="round"/>
+</svg>

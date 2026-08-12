@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 220" role="img" aria-label="HousingCorner alt tech-forward combo">
+  <title>HousingCorner — alt tech-forward combo (reference only)</title>
+  <rect width="960" height="220" fill="#0B3D2E"/>
+  <!-- icon -->
+  <g transform="translate(36, 20) scale(0.75)">
+    <path d="M 60 190 L 60 130 L 130 70 L 200 130 L 200 190 Z" fill="none" stroke="#00B4D8" stroke-width="8" stroke-linejoin="round"/>
+    <rect x="115" y="150" width="30" height="40" fill="#00B4D8"/>
+    <path d="M 170 70 L 200 70 L 200 100" fill="none" stroke="#00B4D8" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <line x1="230" y1="50" x2="230" y2="170" stroke="#00B4D8" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <text x="264" y="120"
+        font-family="'Space Grotesk','DM Sans','Helvetica Neue',Arial,sans-serif"
+        font-weight="600" font-size="68" fill="#F5F5F5" letter-spacing="-2">HousingCorner</text>
+  <text x="266" y="156"
+        font-family="'DM Sans','Helvetica Neue',Arial,sans-serif"
+        font-weight="400" font-size="17" fill="#00B4D8" letter-spacing="2.5">Your corner of property.</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-label="HousingCorner alt tech-forward monogram">
+  <title>HousingCorner — alt tech-forward monogram (reference only)</title>
+  <rect width="260" height="260" rx="130" fill="#0B3D2E"/>
+  <text x="48" y="168"
+        font-family="'Space Grotesk','DM Sans','Helvetica Neue',Arial,sans-serif"
+        font-weight="700" font-size="140" fill="#F5F5F5" letter-spacing="-6">HC</text>
+  <path d="M 204 214 L 224 214 L 224 194" fill="none" stroke="#00B4D8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-label="HousingCorner WhatsApp Business avatar">
+  <title>HousingCorner — WhatsApp avatar (640×640)</title>
+
+  <!-- Forest green background — bold, legible at thumbnail sizes -->
+  <rect width="640" height="640" fill="#2F5D3A"/>
+
+  <!-- Terracotta corner (top-right) — reinforces the brand mark and carries "Corner" -->
+  <path d="M 640 0 L 640 110 L 530 0 Z" fill="#C77E52"/>
+
+  <!-- Cream house silhouette, centered -->
+  <g transform="translate(150, 150) scale(1.5)">
+    <path d="M 58 220 L 58 128 Q 58 120 64 114 L 124 56 Q 130 50 136 56 L 196 114 Q 202 120 202 128 L 202 220 Q 202 226 196 226 L 64 226 Q 58 226 58 220 Z" fill="#F5F0E6"/>
+    <circle cx="130" cy="158" r="13" fill="#2F5D3A"/>
+    <path d="M 118 168 Q 118 164 122 164 L 138 164 Q 142 164 142 168 L 142 220 L 118 220 Z" fill="#2F5D3A"/>
+    <path d="M 130 64 Q 130 38 152 32 Q 150 52 138 60 Q 134 62 130 64 Z" fill="#8BA888"/>
+    <path d="M 130 70 L 130 64" stroke="#8BA888" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

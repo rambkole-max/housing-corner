@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="HousingCorner pitch deck cover">
+  <title>HousingCorner — pitch deck cover slide (1920×1080)</title>
+
+  <!-- Cream canvas -->
+  <rect width="1920" height="1080" fill="#F5F0E6"/>
+
+  <!-- Forest green bottom band -->
+  <rect y="880" width="1920" height="200" fill="#2F5D3A"/>
+
+  <!-- Terracotta accent triangle, top-left -->
+  <path d="M 0 0 L 180 0 L 0 180 Z" fill="#C77E52" opacity="0.95"/>
+
+  <!-- Large icon, right side -->
+  <g transform="translate(1280, 220) scale(2.2)">
+    <path d="M 58 220 L 58 128 Q 58 120 64 114 L 124 56 Q 130 50 136 56 L 196 114 Q 202 120 202 128 L 202 220 Q 202 226 196 226 L 64 226 Q 58 226 58 220 Z" fill="#2F5D3A"/>
+    <circle cx="130" cy="158" r="13" fill="#F5F0E6"/>
+    <path d="M 118 168 Q 118 164 122 164 L 138 164 Q 142 164 142 168 L 142 220 L 118 220 Z" fill="#F5F0E6"/>
+    <path d="M 130 64 Q 130 38 152 32 Q 150 52 138 60 Q 134 62 130 64 Z" fill="#8BA888"/>
+    <path d="M 130 70 L 130 64" stroke="#8BA888" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 196 114 L 202 128 L 188 128 Z" fill="#C77E52"/>
+  </g>
+
+  <!-- Wordmark, top-left area -->
+  <text x="160" y="260"
+        font-family="'Fraunces','Playfair Display',Georgia,serif"
+        font-weight="500" font-size="88" fill="#1F2A24" letter-spacing="-2">HousingCorner</text>
+  <text x="162" y="312"
+        font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+        font-weight="400" font-size="28" fill="#5C7A4F" letter-spacing="3">Your corner of property.</text>
+
+  <!-- Headline -->
+  <text x="160" y="520"
+        font-family="'Fraunces',Georgia,serif"
+        font-weight="500" font-size="108" fill="#1F2A24" letter-spacing="-2.5">Maharashtra's</text>
+  <text x="160" y="626"
+        font-family="'Fraunces',Georgia,serif"
+        font-weight="500" font-size="108" fill="#1F2A24" letter-spacing="-2.5">corner of trust.</text>
+
+  <!-- Subline -->
+  <text x="160" y="728"
+        font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+        font-weight="400" font-size="30" fill="#8A7E6E" letter-spacing="0.5">RERA-registered properties · documented every step · honest advisory</text>
+
+  <!-- Terracotta rule -->
+  <line x1="160" y1="780" x2="620" y2="780" stroke="#C77E52" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Footer strip -->
+  <g transform="translate(160, 960)" fill="#F5F0E6" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
+    <text y="0" font-size="22" font-weight="500">Ram Kole &amp; Rahul Awale  ·  Co-founders</text>
+    <text y="36" font-size="18" opacity="0.85">info@housingcorner.in  ·  housingcorner.in  ·  +91 84848 02019  ·  +91 95619 04097</text>
+  </g>
+  <text x="1760" y="1004" text-anchor="end" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#8BA888" letter-spacing="4">MAHARERA · APPLICATION IN PROCESS</text>
+</svg>

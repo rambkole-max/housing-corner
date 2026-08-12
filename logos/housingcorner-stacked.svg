@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 620" role="img" aria-label="HousingCorner stacked logo">
+  <title>HousingCorner — stacked logo with MahaRERA line</title>
+  <rect width="520" height="620" fill="#F5F0E6"/>
+
+  <!-- Icon, centered -->
+  <g transform="translate(130, 60) scale(1.1)">
+    <path d="M 58 220 L 58 128 Q 58 120 64 114 L 124 56 Q 130 50 136 56 L 196 114 Q 202 120 202 128 L 202 220 Q 202 226 196 226 L 64 226 Q 58 226 58 220 Z" fill="#2F5D3A"/>
+    <circle cx="130" cy="158" r="13" fill="#F5F0E6"/>
+    <path d="M 118 168 Q 118 164 122 164 L 138 164 Q 142 164 142 168 L 142 220 L 118 220 Z" fill="#F5F0E6"/>
+    <path d="M 130 64 Q 130 38 152 32 Q 150 52 138 60 Q 134 62 130 64 Z" fill="#8BA888"/>
+    <path d="M 130 70 L 130 64" stroke="#8BA888" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 196 114 L 202 128 L 188 128 Z" fill="#C77E52"/>
+  </g>
+
+  <!-- Terracotta rule -->
+  <line x1="150" y1="400" x2="370" y2="400" stroke="#C77E52" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Wordmark -->
+  <text x="260" y="462" text-anchor="middle"
+        font-family="'Fraunces','Playfair Display',Georgia,serif"
+        font-weight="500" font-size="58" fill="#1F2A24" letter-spacing="-1.2">HousingCorner</text>
+  <text x="260" y="498" text-anchor="middle"
+        font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+        font-weight="400" font-size="16" fill="#5C7A4F" letter-spacing="2.5">Your corner of property.</text>
+
+  <!-- MahaRERA compliance line -->
+  <text x="260" y="560" text-anchor="middle"
+        font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+        font-weight="500" font-size="12" fill="#8A7E6E" letter-spacing="3">MAHARERA AGENT REGISTRATION · APPLICATION IN PROCESS</text>
+  <text x="260" y="582" text-anchor="middle"
+        font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+        font-weight="400" font-size="11" fill="#8A7E6E" letter-spacing="2.5">LATUR · MAHARASHTRA</text>
+</svg>

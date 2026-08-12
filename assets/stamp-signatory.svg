@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250" width="60mm" height="25mm" role="img" aria-label="HousingCorner signatory stamp">
+  <title>Signatory stamp — 60 x 25 mm — single colour artwork</title>
+  <!-- Artwork only; no background. All elements print in stamp ink colour. -->
+  <text x="300" y="70" text-anchor="middle"
+        font-family="'Fraunces','Playfair Display',Georgia,serif"
+        font-weight="600" font-size="52" fill="#000000" letter-spacing="0.5">For HousingCorner</text>
+  <!-- signature line -->
+  <line x1="120" y1="150" x2="480" y2="150" stroke="#000000" stroke-width="3" stroke-dasharray="1,0"/>
+  <text x="300" y="210" text-anchor="middle"
+        font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+        font-weight="500" font-size="38" fill="#000000" letter-spacing="3">PARTNER</text>
+</svg>

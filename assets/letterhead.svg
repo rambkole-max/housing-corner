@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2480 3508" role="img" aria-label="HousingCorner letterhead">
+  <title>HousingCorner — A4 letterhead (300 dpi)</title>
+
+  <!-- Cream background -->
+  <rect width="2480" height="3508" fill="#F5F0E6"/>
+
+  <!-- === Header band === -->
+  <g transform="translate(150, 160)">
+    <!-- Icon -->
+    <g transform="scale(0.9)">
+      <path d="M 58 220 L 58 128 Q 58 120 64 114 L 124 56 Q 130 50 136 56 L 196 114 Q 202 120 202 128 L 202 220 Q 202 226 196 226 L 64 226 Q 58 226 58 220 Z" fill="#2F5D3A"/>
+      <circle cx="130" cy="158" r="13" fill="#F5F0E6"/>
+      <path d="M 118 168 Q 118 164 122 164 L 138 164 Q 142 164 142 168 L 142 220 L 118 220 Z" fill="#F5F0E6"/>
+      <path d="M 130 64 Q 130 38 152 32 Q 150 52 138 60 Q 134 62 130 64 Z" fill="#8BA888"/>
+      <path d="M 130 70 L 130 64" stroke="#8BA888" stroke-width="3" stroke-linecap="round"/>
+      <path d="M 196 114 L 202 128 L 188 128 Z" fill="#C77E52"/>
+    </g>
+    <!-- Wordmark -->
+    <text x="260" y="140"
+          font-family="'Fraunces','Playfair Display',Georgia,serif"
+          font-weight="500" font-size="88" fill="#1F2A24" letter-spacing="-1.5">HousingCorner</text>
+    <text x="262" y="188"
+          font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+          font-weight="400" font-size="24" fill="#5C7A4F" letter-spacing="2">Your corner of property.</text>
+  </g>
+
+  <!-- Header rule -->
+  <line x1="150" y1="420" x2="2330" y2="420" stroke="#C77E52" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- === Body content placeholder === -->
+  <g transform="translate(150, 500)" font-family="'Inter','Helvetica Neue',Arial,sans-serif" fill="#1F2A24">
+    <text y="40" font-size="22" fill="#8A7E6E">Date · [DD Month YYYY]</text>
+    <text y="120" font-size="22" fill="#8A7E6E">To · [Recipient Name]</text>
+    <text y="150" font-size="22" fill="#8A7E6E" opacity="0.85">     [Recipient Address]</text>
+
+    <text y="240" font-size="28" font-weight="500">Subject: [Subject line]</text>
+
+    <text y="320" font-size="22" opacity="0.6">[Letter body starts here. Use 1.5 line-height in your word processor. Inter (or Helvetica Neue as fallback) at 11–12pt prints cleanly at A4.]</text>
+    <text y="360" font-size="22" opacity="0.6">[...]</text>
+  </g>
+
+  <!-- === Footer === -->
+  <rect x="0" y="3320" width="2480" height="188" fill="#2F5D3A"/>
+  <g transform="translate(150, 3360)" font-family="'Inter','Helvetica Neue',Arial,sans-serif" fill="#F5F0E6">
+    <text y="40" font-size="22" font-weight="500" letter-spacing="1">HousingCorner  ·  Founded by Ram Kole &amp; Rahul Awale</text>
+    <text y="80" font-size="20" opacity="0.85">Latur, Maharashtra</text>
+    <text y="110" font-size="20" opacity="0.85">info@housingcorner.in  ·  www.housingcorner.in  ·  +91 84848 02019  ·  +91 95619 04097</text>
+    <text y="140" font-size="18" fill="#8BA888" letter-spacing="3">MAHARERA AGENT REGISTRATION  ·  APPLICATION IN PROCESS</text>
+  </g>
+</svg>

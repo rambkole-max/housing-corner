@@ -1,0 +1,9 @@
+# HousingCorner — housingcorner.in
+
+User-agent: *
+Allow: /
+
+# Source files, not pages. Never meant to be indexed.
+Disallow: /projects/_template/
+
+Sitemap: https://www.housingcorner.in/sitemap.xml

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Royal Paradise — Warje Malwadi, Pune">
+  <title>Royal Paradise — Warje Malwadi, Pune</title>
+
+  <rect width="1200" height="630" fill="#F5F0E6"/>
+
+  <!-- corner accents -->
+  <path d="M 6 6 L 156 6 M 6 6 L 6 156" stroke="#C77E52" stroke-width="10" fill="none"/>
+  <path d="M 1194 624 L 1044 624 M 1194 624 L 1194 474" stroke="#2F5D3A" stroke-width="10" fill="none"/>
+
+  <circle cx="1130" cy="140" r="220" fill="#8BA888" opacity="0.13"/>
+
+  <g transform="translate(96, 54) scale(0.42)">
+    <path d="M 58 220 L 58 128 Q 58 120 64 114 L 124 56 Q 130 50 136 56 L 196 114 Q 202 120 202 128 L 202 220 Q 202 226 196 226 L 64 226 Q 58 226 58 220 Z" fill="#2F5D3A"/>
+    <circle cx="130" cy="158" r="13" fill="#F5F0E6"/>
+    <path d="M 118 168 Q 118 164 122 164 L 138 164 Q 142 164 142 168 L 142 220 L 118 220 Z" fill="#F5F0E6"/>
+    <path d="M 130 64 Q 130 38 152 32 Q 150 52 138 60 Q 134 62 130 64 Z" fill="#8BA888"/>
+    <path d="M 130 70 L 130 64" stroke="#8BA888" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 196 114 L 202 128 L 188 128 Z" fill="#C77E52"/>
+  </g>
+
+  <text x="200" y="152" font-family="Fraunces, 'Playfair Display', Georgia, 'Century Schoolbook L', 'Bitstream Charter', serif" font-size="34" fill="#1F2A24" letter-spacing="-0.5">HousingCorner</text>
+  <text x="202" y="180" font-family="Inter, 'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="15" fill="#5C7A4F" letter-spacing="2.4">YOUR CORNER OF PROPERTY</text>
+
+  <line x1="96" y1="228" x2="1010" y2="228" stroke="#8BA888" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- project name -->
+  <text x="96" y="316" font-family="Fraunces, 'Playfair Display', Georgia, 'Century Schoolbook L', 'Bitstream Charter', serif" font-size="72" fill="#1F2A24" letter-spacing="-1.6">Royal Paradise</text>
+
+  <!-- locality -->
+  <text x="98" y="366" font-family="Inter, 'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="27" fill="#2F5D3A" font-weight="500">Warje Malwadi, Pune</text>
+
+  <!-- headline -->
+  <text x="98" y="422" font-family="Inter, 'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="34" fill="#8A7E6E">2 BHK homes on the Pune–Bangalore Highway</text>
+
+  <!-- chips -->
+  <rect x="96" y="470" width="198" height="52" rx="26" fill="#2F5D3A"/>
+  <text x="195" y="504" font-family="Inter, 'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="22" font-weight="600" fill="#F5F0E6" text-anchor="middle">From ₹75.1 L</text>
+
+  <rect x="310" y="470" width="291" height="52" rx="26" fill="none" stroke="#8BA888" stroke-width="2"/>
+  <text x="455" y="504" font-family="Inter, 'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="22" font-weight="500" fill="#2F5D3A" text-anchor="middle">MahaRERA P52100049617</text>
+
+  <text x="98" y="580" font-family="Inter, 'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="19" fill="#8A7E6E" letter-spacing="1.1">Site visits · written cost breakdowns · housingcorner.in</text>
+</svg>

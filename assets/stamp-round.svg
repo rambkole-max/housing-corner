@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="40mm" height="40mm" role="img" aria-label="HousingCorner round stamp">
+  <title>Round stamp — 40 mm diameter — single colour artwork</title>
+  <defs>
+    <path id="arcTop" d="M 200 200 m -142 0 a 142 142 0 1 1 284 0" fill="none"/>
+    <path id="arcBottom" d="M 200 200 m -142 0 a 142 142 0 1 0 284 0" fill="none"/>
+  </defs>
+
+  <!-- outer double ring -->
+  <circle cx="200" cy="200" r="192" fill="none" stroke="#000000" stroke-width="6"/>
+  <circle cx="200" cy="200" r="180" fill="none" stroke="#000000" stroke-width="2.5"/>
+
+  <!-- inner ring -->
+  <circle cx="200" cy="200" r="112" fill="none" stroke="#000000" stroke-width="2.5"/>
+
+  <!-- firm name around top -->
+  <text font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="700"
+        font-size="36" fill="#000000" letter-spacing="4">
+    <textPath href="#arcTop" startOffset="50%" text-anchor="middle">★ HOUSINGCORNER ★</textPath>
+  </text>
+
+  <!-- place around bottom -->
+  <text font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="600"
+        font-size="28" fill="#000000" letter-spacing="3">
+    <textPath href="#arcBottom" startOffset="50%" text-anchor="middle">LATUR · MAHARASHTRA</textPath>
+  </text>
+
+  <!-- centre: house icon simplified from brand logo -->
+  <g transform="translate(148, 138) scale(0.72)">
+    <path d="M 20 140 L 20 70 Q 20 62 26 56 L 66 20 Q 72 14 78 20 L 118 56 Q 124 62 124 70 L 124 140 Z"
+          fill="none" stroke="#000000" stroke-width="9" stroke-linejoin="round"/>
+    <path d="M 58 140 L 58 96 Q 58 92 62 92 L 82 92 Q 86 92 86 96 L 86 140"
+          fill="none" stroke="#000000" stroke-width="8" stroke-linejoin="round"/>
+  </g>
+  <text x="200" y="286" text-anchor="middle"
+        font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+        font-weight="600" font-size="22" fill="#000000" letter-spacing="2">PARTNERSHIP FIRM</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180" role="img" aria-label="HousingCorner wordmark">
+  <title>HousingCorner — wordmark</title>
+  <rect width="760" height="180" fill="#F5F0E6"/>
+
+  <!-- Sage leaf above final 'r' -->
+  <path d="M 612 48 Q 612 22 634 16 Q 632 36 620 44 Q 616 46 612 48 Z" fill="#8BA888"/>
+  <path d="M 617 54 L 617 48" stroke="#8BA888" stroke-width="2.4" stroke-linecap="round"/>
+
+  <!-- Wordmark -->
+  <text x="48" y="108"
+        font-family="'Fraunces','Playfair Display',Georgia,serif"
+        font-weight="500" font-size="84" fill="#1F2A24" letter-spacing="-2">HousingCorner</text>
+
+  <!-- Terracotta rule -->
+  <line x1="48" y1="128" x2="220" y2="128" stroke="#C77E52" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Tagline -->
+  <text x="48" y="156"
+        font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+        font-weight="400" font-size="18" fill="#5C7A4F" letter-spacing="2.5">Your corner of property.</text>
+</svg>
